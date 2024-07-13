@@ -5,8 +5,8 @@ const path = require('path')
 
 
 //change the path here
-let directory = path.join(__dirname, 'begin')
-let output = path.join(__dirname, 'begin.csv')
+let directory = path.join(__dirname, 'lecture3')
+let output = path.join(__dirname, 'general.csv')
 
 
 
