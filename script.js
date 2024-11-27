@@ -2,11 +2,12 @@ const fs = require('fs')
 const { JSDOM } = require('jsdom')
 const path = require('path')
 
+const HEADER = `Question Text,Question Type,Option 1,Option 2,Option 3,Option 4,Option 5,Correct Answer\n`
 
 
 //change the path here
-let directory = path.join(__dirname, 'lecture3')
-let output = path.join(__dirname, 'general.csv')
+let directory = path.join(__dirname, '/materials/folder_name')
+let output = path.join(__dirname, '/outcomes/output_name.csv')
 
 
 
@@ -63,6 +64,9 @@ function createQuestion(question, ans, corrAns) {
     return new Question(q, a1, a2, a3, a4, cA)
 }
 
+fs.appendFileSync(output, HEADER)
+
+
 try {
     const htmlList = fs.readdirSync(directory).filter(file => path.extname(file).toLowerCase() === '.html')
     htmlList.forEach(htmlFile => {
@@ -82,7 +86,6 @@ try {
         }
     })
     questionList.forEach(question => {
-        // console.log(question.toFullQuestion());
         fs.appendFileSync(output, question.toFullQuestion())
     })
 } catch (error) {
