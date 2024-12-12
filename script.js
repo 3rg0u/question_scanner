@@ -6,8 +6,8 @@ const HEADER = `Question Text,Question Type,Option 1,Option 2,Option 3,Option 4,
 
 
 //change the path here
-let directory = path.join(__dirname, '/materials/folder_name')
-let output = path.join(__dirname, '/outcomes/output_name.csv')
+let directory = path.join(__dirname, '/materials/sthing')
+let output = path.join(__dirname, '/outcomes/sthing_else.csv')
 
 
 
